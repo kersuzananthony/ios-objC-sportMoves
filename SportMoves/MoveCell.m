@@ -14,15 +14,18 @@
 @interface MoveCell()
 @property (weak, nonatomic) IBOutlet UILabel *moveNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *moveImageView;
+
 @property (nonatomic, strong) NSURLSessionDownloadTask * _Nullable downloadTask;
 @property (nonatomic, strong) Move *move;
+
 @end
 
 @implementation MoveCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.moveImageView.image = [UIImage imageNamed:@"empty"];
 }
 
 - (void)prepareForReuse {
@@ -30,7 +33,7 @@
     self.downloadTask = nil;
     
     self.moveNameLabel.text = nil;
-    self.moveImageView.image = nil;
+    self.moveImageView.image = [UIImage imageNamed:@"empty"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -45,7 +48,6 @@
  
     NSURL *urlImage = [NSURL URLWithString:aMove.remoteURL];
     if (urlImage != nil) {
-        NSLog(@"Prepare to download: %@", urlImage);
         self.downloadTask = [self.moveImageView downloadImageWithURL:urlImage];
     }
 }

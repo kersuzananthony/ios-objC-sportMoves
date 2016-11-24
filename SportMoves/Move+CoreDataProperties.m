@@ -15,7 +15,6 @@
 }
 
 @dynamic moveId;
-@dynamic localURL;
 @dynamic moveName;
 @dynamic remoteURL;
 

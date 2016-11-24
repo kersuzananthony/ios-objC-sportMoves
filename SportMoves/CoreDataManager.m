@@ -65,8 +65,7 @@
         [self.mainManagedContext performBlockAndWait:^{
             NSError *err;
             [weakSelf.mainManagedContext save:&err];
-            NSLog(@"CoreData saved");
-            NSLog(@"%@", err.localizedDescription);
+            
             NSAssert(err == nil, @"Error is not nil");
         }];
     }

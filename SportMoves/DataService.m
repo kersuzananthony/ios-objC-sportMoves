@@ -27,6 +27,11 @@
 }
 
 // MARK: Public methods
+
+// SyncRecords:
+// We get back all previous data from local database
+// We delete all data
+// We insert data we have downloaded from the server
 - (NSArray<Move *> *)syncRecords:(NSArray<NSDictionary<NSString *,id> *> *)jsonData {
     if (jsonData == nil) {
         return nil;
@@ -50,8 +55,6 @@
     
     NSArray<Move *> *moves = (NSArray<Move *> *) [self.coreDataManager.mainManagedContext executeFetchRequest:fetchRequest error:&err];
     
-    NSLog(@"Moves founded: %lu", (unsigned long)moves.count);
-    
     return moves;
 }
 
@@ -67,14 +70,13 @@
     NSMutableArray<Move *> *movesToReturn = [[NSMutableArray alloc]init];
     
     for (NSDictionary<NSString *, id> *moveData in jsonData) {
+        NSLog(@"%@", self.coreDataManager.mainManagedContext);
         Move *move = [[Move alloc]initWithContext:self.coreDataManager.mainManagedContext moveJson:moveData];
         
         [movesToReturn addObject:move];
     }
     
     [self.coreDataManager save];
-    
-    NSLog(@"%@", movesToReturn.firstObject.moveName);
     
     return movesToReturn;
 }

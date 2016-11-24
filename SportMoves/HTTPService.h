@@ -19,5 +19,5 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)sharedInstance;
 NS_ASSUME_NONNULL_END
 
-- (void)loadDataFromServerWithCoreDataManager:(CoreDataManager * _Nonnull)aCoreDataManager andCompletionHandler:(nullable onCompleteLoadData)completionHandler;
+- (NSURLSessionDataTask * _Nonnull)loadDataFromServerWithCoreDataManager:(CoreDataManager * _Nonnull)aCoreDataManager andCompletionHandler:(nullable onCompleteLoadData)completionHandler;
 @end

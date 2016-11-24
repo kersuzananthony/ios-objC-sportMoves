@@ -11,13 +11,15 @@
 @implementation Move
 
 -(id)initWithContext:(NSManagedObjectContext *)managedObjectContext moveJson:(NSDictionary<NSString *, id>*)aMoveJson {
+    // Initialize value with json
+
+    NSLog(@"%@", managedObjectContext);
+    
     if (self = [super initWithContext:managedObjectContext]) {
         [self setValue:[aMoveJson objectForKey:@"name"] forKey:@"moveName"];
         [self setValue:[aMoveJson objectForKey:@"image_url"] forKey:@"remoteURL"];
         [self setValue:[NSString stringWithFormat:@"%@", [aMoveJson objectForKey:@"id"]] forKey:@"moveId"];
     }
-    
-    NSLog(@"%@", self.moveName);
     
     return self;
 }

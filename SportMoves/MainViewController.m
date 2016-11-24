@@ -12,10 +12,16 @@
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSURLSessionDataTask * _Nullable dataTask;
 @property (nonatomic, strong) NSMutableArray<Move *> *moves;
 @end
 
 @implementation MainViewController
+
+- (void)dealloc {
+    [self.dataTask resume];
+    self.dataTask = nil;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +35,7 @@
     
     if (self.coreDataManager != nil) {
         // Load data from server
-        [[HTTPService sharedInstance]loadDataFromServerWithCoreDataManager:self.coreDataManager andCompletionHandler:^(NSArray<Move *> * _Nullable moves, NSString * _Nullable errorMessage) {
+        self.dataTask = [[HTTPService sharedInstance]loadDataFromServerWithCoreDataManager:self.coreDataManager andCompletionHandler:^(NSArray<Move *> * _Nullable moves, NSString * _Nullable errorMessage) {
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (errorMessage != nil) {

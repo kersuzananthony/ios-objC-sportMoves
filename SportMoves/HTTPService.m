@@ -32,12 +32,14 @@
     return sharedService;
 }
 
-- (void)loadDataFromServerWithCoreDataManager:(CoreDataManager *)aCoreDataManager andCompletionHandler:(onCompleteLoadData)completionHandler {
+// Send a HTTP Request to the server for getting JSON
+// Resync local data with the json response
+- (NSURLSessionDataTask *)loadDataFromServerWithCoreDataManager:(CoreDataManager *)aCoreDataManager andCompletionHandler:(onCompleteLoadData)completionHandler {
  
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%s", CLIENT_URL]];
     
     NSURLSessionDataTask *dataTask = [self.urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"In completion handler");
+    
         if (data != nil) {
             NSError *err;
             NSDictionary *rawJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
@@ -59,8 +61,8 @@
     
     // Begin the network request
     [dataTask resume];
-
     
+    return dataTask;
 }
 
 @end

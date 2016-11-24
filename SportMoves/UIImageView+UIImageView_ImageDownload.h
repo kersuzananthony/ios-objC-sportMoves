@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImageView (UIImageView_ImageDownload)
-- (NSURLSessionDownloadTask *) downloadImageWithURL:(NSURL *)url;
+- (NSURLSessionDownloadTask * _Nonnull) downloadImageWithURL:(NSURL * _Nonnull)url;
 @end
 
