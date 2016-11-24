@@ -8,17 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "CoreDataManager.h"
 #import "Move+CoreDataClass.h"
+
+typedef void (^onCompleteLoadData)(NSArray<Move *> * _Nullable moves, NSString  * _Nullable errorMessage);
 
 @interface HTTPService : NSObject
 
 NS_ASSUME_NONNULL_BEGIN
-@property(nonatomic, strong) NSURLSession *sharedSession;
-
 + (id)sharedInstance;
-
 NS_ASSUME_NONNULL_END
 
-- (NSArray<Move *>  * _Nullable)synchronizeSportMoves;
-
+- (void)loadDataFromServerWithCoreDataManager:(CoreDataManager * _Nonnull)aCoreDataManager andCompletionHandler:(nullable onCompleteLoadData)completionHandler;
 @end

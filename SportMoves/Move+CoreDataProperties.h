@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Move *> *)fetchRequest;
 
-@property (nonatomic) int32_t id;
+@property (nullable, nonatomic, copy) NSString *moveId;
 @property (nullable, nonatomic, copy) NSString *localURL;
 @property (nullable, nonatomic, copy) NSString *moveName;
 @property (nullable, nonatomic, copy) NSString *remoteURL;

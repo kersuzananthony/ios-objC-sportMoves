@@ -11,8 +11,6 @@
 #import "CoreDataManager.h"
 
 @interface CoreDataManager()
-// Constant
-#define MODEL_NAME = @"SportMoves";
 // Private variables
 @property(nonatomic, strong) NSPersistentStoreCoordinator *coordinator;
 @end
@@ -57,6 +55,20 @@
     }
     
     return self;
+}
+
+- (void)save {
+    if ([self.mainManagedContext hasChanges]) {
+        CoreDataManager __weak *weakSelf = self;
+        
+        
+        [self.mainManagedContext performBlockAndWait:^{
+            NSError *err;
+            [weakSelf.mainManagedContext save:&err];
+            
+            NSAssert(err == nil, @"Error is not nil");
+        }];
+    }
 }
 
 @end

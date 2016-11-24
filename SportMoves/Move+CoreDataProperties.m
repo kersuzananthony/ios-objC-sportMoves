@@ -14,7 +14,7 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"Move"];
 }
 
-@dynamic id;
+@dynamic moveId;
 @dynamic localURL;
 @dynamic moveName;
 @dynamic remoteURL;
