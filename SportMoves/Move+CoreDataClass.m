@@ -14,7 +14,7 @@
     if (self = [super initWithContext:managedObjectContext]) {
         self.moveName = [aMoveJson objectForKey:@"name"];
         self.remoteURL = [aMoveJson objectForKey:@"image_url"];
-        self.moveId = [aMoveJson objectForKey:@"id"];
+        self.moveId = [NSString stringWithFormat:@"%@", [aMoveJson objectForKey:@"id"]];
     }
     
     return self;

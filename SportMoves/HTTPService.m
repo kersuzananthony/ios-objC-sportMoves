@@ -32,25 +32,16 @@
     return sharedService;
 }
 
-// Synchronization of the sport moves
-- (NSArray<Move *> *)synchronizeSportMoves {
-    NSMutableArray<Move *> *sportMoves = [[NSMutableArray alloc]init];
-    
-    // Make HTTP Request for getting moves from internet
-    
-    
-    return sportMoves;
-}
-
 - (void)loadDataFromServerWithCoreDataManager:(CoreDataManager *)aCoreDataManager andCompletionHandler:(onCompleteLoadData)completionHandler {
  
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%s", CLIENT_URL]];
     
     NSURLSessionDataTask *dataTask = [self.urlSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+        NSLog(@"In completion handler");
         if (data != nil) {
             NSError *err;
-            NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+            NSDictionary *rawJson = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
+            NSArray *json = [rawJson objectForKey:@"data"];
             
             if (err != nil) {
                 completionHandler(nil, @"Data is corrupted, please try again.");
@@ -64,9 +55,6 @@
         } else {
             completionHandler(nil, @"Problem connecting to the server");
         }
-        
-        completionHandler(nil, @"No data has been retrieved from the server");
-        
     }];
     
     // Begin the network request
