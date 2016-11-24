@@ -12,10 +12,12 @@
 
 -(id)initWithContext:(NSManagedObjectContext *)managedObjectContext moveJson:(NSDictionary<NSString *, id>*)aMoveJson {
     if (self = [super initWithContext:managedObjectContext]) {
-        self.moveName = [aMoveJson objectForKey:@"name"];
-        self.remoteURL = [aMoveJson objectForKey:@"image_url"];
-        self.moveId = [NSString stringWithFormat:@"%@", [aMoveJson objectForKey:@"id"]];
+        [self setValue:[aMoveJson objectForKey:@"name"] forKey:@"moveName"];
+        [self setValue:[aMoveJson objectForKey:@"image_url"] forKey:@"remoteURL"];
+        [self setValue:[NSString stringWithFormat:@"%@", [aMoveJson objectForKey:@"id"]] forKey:@"moveId"];
     }
+    
+    NSLog(@"%@", self.moveName);
     
     return self;
 }

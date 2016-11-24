@@ -48,9 +48,9 @@
             } else {
                 // We have the json data, we can now perform synchronisation with coreData API
                 DataService *dataService = [[DataService alloc]initWithCoreDataManager:aCoreDataManager];
-                [dataService syncRecords:json];
+                NSArray<Move *> *moves = [dataService syncRecords:json];
                 
-                completionHandler(json, nil);
+                completionHandler(moves, nil);
             }
         } else {
             completionHandler(nil, @"Problem connecting to the server");

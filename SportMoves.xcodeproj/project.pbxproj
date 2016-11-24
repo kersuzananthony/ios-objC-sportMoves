@@ -19,6 +19,9 @@
 		DCE906BA1DE71EC0007BD594 /* Move+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE906B81DE71EC0007BD594 /* Move+CoreDataProperties.m */; };
 		DCF17F661DE73854004E125D /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F651DE73854004E125D /* DataService.m */; };
 		DCF17F6A1DE7393D004E125D /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F691DE7393D004E125D /* CoreDataManager.m */; };
+		DCF17F6E1DE76B75004E125D /* MoveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F6C1DE76B75004E125D /* MoveCell.m */; };
+		DCF17F6F1DE76B75004E125D /* MoveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCF17F6D1DE76B75004E125D /* MoveCell.xib */; };
+		DCF17F741DE77936004E125D /* UIImageView+UIImageView_ImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F731DE77936004E125D /* UIImageView+UIImageView_ImageDownload.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,11 @@
 		DCF17F671DE73864004E125D /* DataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
 		DCF17F681DE73922004E125D /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		DCF17F691DE7393D004E125D /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		DCF17F6B1DE76B75004E125D /* MoveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCell.h; sourceTree = "<group>"; };
+		DCF17F6C1DE76B75004E125D /* MoveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveCell.m; sourceTree = "<group>"; };
+		DCF17F6D1DE76B75004E125D /* MoveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoveCell.xib; sourceTree = "<group>"; };
+		DCF17F721DE77936004E125D /* UIImageView+UIImageView_ImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIImageView_ImageDownload.h"; sourceTree = "<group>"; };
+		DCF17F731DE77936004E125D /* UIImageView+UIImageView_ImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIImageView_ImageDownload.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 		DC5CC9D91DE718A7006E907C /* SportMoves */ = {
 			isa = PBXGroup;
 			children = (
+				DCF17F701DE778C2004E125D /* Categories */,
 				DC5CC9FE1DE71CAB006E907C /* SupportedFiles */,
 				DC5CC9F71DE71B48006E907C /* Services */,
 				DC5CC9F31DE718CA006E907C /* Controllers */,
@@ -102,6 +111,9 @@
 		DC5CC9F11DE718BC006E907C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DCF17F6B1DE76B75004E125D /* MoveCell.h */,
+				DCF17F6C1DE76B75004E125D /* MoveCell.m */,
+				DCF17F6D1DE76B75004E125D /* MoveCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -145,6 +157,15 @@
 				DC5CCA001DE71CC8006E907C /* SportMoves.xcdatamodeld */,
 			);
 			name = SupportedFiles;
+			sourceTree = "<group>";
+		};
+		DCF17F701DE778C2004E125D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DCF17F721DE77936004E125D /* UIImageView+UIImageView_ImageDownload.h */,
+				DCF17F731DE77936004E125D /* UIImageView+UIImageView_ImageDownload.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF17F6F1DE76B75004E125D /* MoveCell.xib in Resources */,
 				DC5CC9EA1DE718A7006E907C /* LaunchScreen.storyboard in Resources */,
 				DC5CC9E71DE718A7006E907C /* Assets.xcassets in Resources */,
 				DC5CC9E51DE718A7006E907C /* Main.storyboard in Resources */,
@@ -219,12 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF17F6E1DE76B75004E125D /* MoveCell.m in Sources */,
 				DCE906B91DE71EC0007BD594 /* Move+CoreDataClass.m in Sources */,
 				DCE906BA1DE71EC0007BD594 /* Move+CoreDataProperties.m in Sources */,
 				DC5CCA021DE71CC8006E907C /* SportMoves.xcdatamodeld in Sources */,
 				DCF17F6A1DE7393D004E125D /* CoreDataManager.m in Sources */,
 				DCF17F661DE73854004E125D /* DataService.m in Sources */,
 				DC5CC9DF1DE718A7006E907C /* AppDelegate.m in Sources */,
+				DCF17F741DE77936004E125D /* UIImageView+UIImageView_ImageDownload.m in Sources */,
 				DC5CC9FC1DE71BA8006E907C /* HTTPService.m in Sources */,
 				DC5CC9F61DE718E8006E907C /* MainViewController.m in Sources */,
 				DC5CC9DC1DE718A7006E907C /* main.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "HTTPService.h"
+#import "MoveCell.h"
 
 @interface MainViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -24,6 +25,8 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [self registerTableViewCell];
+    
     if (self.coreDataManager != nil) {
         // Load data from server
         [[HTTPService sharedInstance]loadDataFromServerWithCoreDataManager:self.coreDataManager andCompletionHandler:^(NSArray<Move *> * _Nullable moves, NSString * _Nullable errorMessage) {
@@ -37,6 +40,7 @@
                 if (moves.count > 0) {
                     self.moves = nil;
                     self.moves = [[NSMutableArray alloc]initWithArray:moves];
+                    
                     [self.tableView reloadData];
                 }
             });
@@ -46,6 +50,11 @@
 }
 
 // MARK: - Controller custom methods
+- (void)registerTableViewCell {
+    UINib *moveCellNib = [UINib nibWithNibName:@"MoveCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:moveCellNib forCellReuseIdentifier:@"MoveCell"];
+}
+
 - (void)displayErrorMessage:(NSString * _Nonnull)message {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -66,9 +75,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MoveCell *moveCell = (MoveCell *) [self.tableView dequeueReusableCellWithIdentifier:@"MoveCell" forIndexPath:indexPath];
     
-    return [[UITableViewCell alloc]init];
+    Move *currentMove = [self.moves objectAtIndex:indexPath.row];
+    
+    [moveCell configureCellWithMove:currentMove];
+    
+    return moveCell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 88;
+}
 
 @end

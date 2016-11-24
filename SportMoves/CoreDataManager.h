@@ -14,6 +14,6 @@ typedef void (^onCompleteWithError)(NSError * _Nullable error);
 @interface CoreDataManager : NSObject
 
 @property(nonatomic, strong) NSManagedObjectContext * _Nonnull mainManagedContext;
-- (id)initWithCompletion:(nullable onCompleteWithError)completionHandler;
+- (nonnull id)initWithCompletion:(nullable onCompleteWithError)completionHandler;
 - (void)save;
 @end

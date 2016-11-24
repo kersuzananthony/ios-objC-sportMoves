@@ -58,8 +58,9 @@
 - (void)deleteRecords:(NSArray<NSManagedObject *> *)records {
     for (NSManagedObject *object in records) {
         [self.coreDataManager.mainManagedContext deleteObject:object];
-        [self.coreDataManager save];
     }
+    
+    [self.coreDataManager save];
 }
 
 - (NSArray<Move *> *)insertRecords:(NSArray<NSDictionary<NSString *, id> *> *)jsonData {
@@ -72,6 +73,8 @@
     }
     
     [self.coreDataManager save];
+    
+    NSLog(@"%@", movesToReturn.firstObject.moveName);
     
     return movesToReturn;
 }

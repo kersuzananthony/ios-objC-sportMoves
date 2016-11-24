@@ -16,6 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (id)initWithCoreDataManager:(CoreDataManager *)coreDataManager;
 NS_ASSUME_NONNULL_END
 
-- (NSArray<Move *>  * _Nullable)syncRecords:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonData;
+- (NSMutableArray<Move *>  * _Nullable)syncRecords:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)jsonData;
 
 @end
