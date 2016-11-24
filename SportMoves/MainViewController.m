@@ -20,6 +20,11 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    if (self.coreDataManager != nil) {
+        // Load data from server
+        
+    }
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

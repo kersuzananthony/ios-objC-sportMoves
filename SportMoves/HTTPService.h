@@ -8,15 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-//#import "SportMove.h"
+#import "Move+CoreDataClass.h"
 
 @interface HTTPService : NSObject
 
-//@property(nonatomic, strong) NSMutableArray<Post *> *loadedPosts;
+NS_ASSUME_NONNULL_BEGIN
+@property(nonatomic, strong) NSURLSession *sharedSession;
 
 + (id)sharedInstance;
-- (id)init;
 
-- (void)getSportMoves;
+NS_ASSUME_NONNULL_END
+
+- (NSArray<Move *>  * _Nullable)synchronizeSportMoves;
 
 @end

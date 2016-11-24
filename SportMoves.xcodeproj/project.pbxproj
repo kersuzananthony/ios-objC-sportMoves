@@ -14,6 +14,11 @@
 		DC5CC9EA1DE718A7006E907C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5CC9E81DE718A7006E907C /* LaunchScreen.storyboard */; };
 		DC5CC9F61DE718E8006E907C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5CC9F51DE718E8006E907C /* MainViewController.m */; };
 		DC5CC9FC1DE71BA8006E907C /* HTTPService.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5CC9FB1DE71BA8006E907C /* HTTPService.m */; };
+		DC5CCA021DE71CC8006E907C /* SportMoves.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC5CCA001DE71CC8006E907C /* SportMoves.xcdatamodeld */; };
+		DCE906B91DE71EC0007BD594 /* Move+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE906B61DE71EC0007BD594 /* Move+CoreDataClass.m */; };
+		DCE906BA1DE71EC0007BD594 /* Move+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE906B81DE71EC0007BD594 /* Move+CoreDataProperties.m */; };
+		DCF17F661DE73854004E125D /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F651DE73854004E125D /* DataService.m */; };
+		DCF17F6A1DE7393D004E125D /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF17F691DE7393D004E125D /* CoreDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,15 @@
 		DC5CC9F51DE718E8006E907C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		DC5CC9FB1DE71BA8006E907C /* HTTPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPService.m; sourceTree = "<group>"; };
 		DC5CC9FD1DE71BB3006E907C /* HTTPService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPService.h; sourceTree = "<group>"; };
+		DC5CCA011DE71CC8006E907C /* SportMoves.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportMoves.xcdatamodel; sourceTree = "<group>"; };
+		DCE906B51DE71EC0007BD594 /* Move+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Move+CoreDataClass.h"; sourceTree = "<group>"; };
+		DCE906B61DE71EC0007BD594 /* Move+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Move+CoreDataClass.m"; sourceTree = "<group>"; };
+		DCE906B71DE71EC0007BD594 /* Move+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Move+CoreDataProperties.h"; sourceTree = "<group>"; };
+		DCE906B81DE71EC0007BD594 /* Move+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Move+CoreDataProperties.m"; sourceTree = "<group>"; };
+		DCF17F651DE73854004E125D /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataService.m; sourceTree = "<group>"; };
+		DCF17F671DE73864004E125D /* DataService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataService.h; sourceTree = "<group>"; };
+		DCF17F681DE73922004E125D /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		DCF17F691DE7393D004E125D /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 		DC5CC9D91DE718A7006E907C /* SportMoves */ = {
 			isa = PBXGroup;
 			children = (
+				DC5CC9FE1DE71CAB006E907C /* SupportedFiles */,
 				DC5CC9F71DE71B48006E907C /* Services */,
 				DC5CC9F31DE718CA006E907C /* Controllers */,
 				DC5CC9F21DE718C5006E907C /* Models */,
@@ -94,6 +109,10 @@
 		DC5CC9F21DE718C5006E907C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DCE906B51DE71EC0007BD594 /* Move+CoreDataClass.h */,
+				DCE906B61DE71EC0007BD594 /* Move+CoreDataClass.m */,
+				DCE906B71DE71EC0007BD594 /* Move+CoreDataProperties.h */,
+				DCE906B81DE71EC0007BD594 /* Move+CoreDataProperties.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -112,8 +131,20 @@
 			children = (
 				DC5CC9FB1DE71BA8006E907C /* HTTPService.m */,
 				DC5CC9FD1DE71BB3006E907C /* HTTPService.h */,
+				DCF17F651DE73854004E125D /* DataService.m */,
+				DCF17F671DE73864004E125D /* DataService.h */,
+				DCF17F681DE73922004E125D /* CoreDataManager.h */,
+				DCF17F691DE7393D004E125D /* CoreDataManager.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		DC5CC9FE1DE71CAB006E907C /* SupportedFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DC5CCA001DE71CC8006E907C /* SportMoves.xcdatamodeld */,
+			);
+			name = SupportedFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE906B91DE71EC0007BD594 /* Move+CoreDataClass.m in Sources */,
+				DCE906BA1DE71EC0007BD594 /* Move+CoreDataProperties.m in Sources */,
+				DC5CCA021DE71CC8006E907C /* SportMoves.xcdatamodeld in Sources */,
+				DCF17F6A1DE7393D004E125D /* CoreDataManager.m in Sources */,
+				DCF17F661DE73854004E125D /* DataService.m in Sources */,
 				DC5CC9DF1DE718A7006E907C /* AppDelegate.m in Sources */,
 				DC5CC9FC1DE71BA8006E907C /* HTTPService.m in Sources */,
 				DC5CC9F61DE718E8006E907C /* MainViewController.m in Sources */,
@@ -350,8 +386,22 @@
 				DC5CC9F01DE718A7006E907C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC5CCA001DE71CC8006E907C /* SportMoves.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC5CCA011DE71CC8006E907C /* SportMoves.xcdatamodel */,
+			);
+			currentVersion = DC5CCA011DE71CC8006E907C /* SportMoves.xcdatamodel */;
+			path = SportMoves.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DC5CC9CF1DE718A6006E907C /* Project object */;
 }
